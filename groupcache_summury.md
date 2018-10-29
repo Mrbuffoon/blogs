@@ -29,11 +29,16 @@ sinks.go              暂时没太搞明白
 ```
 基本原理：
 
-
-
 我们以通过groupcache查找一个Get（“my”）的过程为例说明：
+![示例图片](https://img-blog.csdnimg.cn/20181029182012260.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2FqZmd1cmpmbXZ2bHNma2pnbGto,size_16,color_FFFFFF,t_70)
 
-原理细节待补充。。。
+当 GET my 打到 groupcache-1 后：
+
+1、groupcache-1 先看看自己的 cache 里有没有 my，有的话直接返回。
+
+2、要是没有，看看这个请求归不归自己管，若是，去 DataSever 获取，否则问 group-2(假设 my 归 -2管) 要数据，成功返回后 groupcache-1 本地也缓存一份。
+
+3、在 2 过程中，所有后来打到 groupcache-1 的 GET foo 都会阻塞，直到第一个请求返回。
 
 
 参考链接：
@@ -43,3 +48,5 @@ sinks.go              暂时没太搞明白
 <http://orangeholic.iteye.com/blog/2257245>
 
 <http://www.voidcn.com/article/p-kjpxomam-baw.html>
+
+<https://www.jianshu.com/p/f69f3a3a9a78>
