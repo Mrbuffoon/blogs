@@ -160,17 +160,19 @@ func (c *Cache) Len() int {
 	return c.ll.Len()
 }
 ```
-
+Clear()函数
 
 ```
 // Clear purges all stored items from the cache.
 func (c *Cache) Clear() {
+	//如果回调函数不为空，需要遍历执行回调函数
 	if c.OnEvicted != nil {
 		for _, e := range c.cache {
 			kv := e.Value.(*entry)
 			c.OnEvicted(kv.key, kv.value)
 		}
 	}
+	//如果回调函数为空，直接重置为nil即可
 	c.ll = nil
 	c.cache = nil
 }
