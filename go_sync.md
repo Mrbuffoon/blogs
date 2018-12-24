@@ -377,7 +377,7 @@ func main() {
 sync/atomic是原子操作，具体未完待续。。。。。。
 
 
-#####参考资料：
+##### 参考资料：
 
 [http://blog.xiayf.cn/2015/05/20/fundamentals-of-concurrent-programming/](http://blog.xiayf.cn/2015/05/20/fundamentals-of-concurrent-programming/)
 
