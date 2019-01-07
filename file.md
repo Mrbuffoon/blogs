@@ -202,8 +202,36 @@ func main() {
 ```
 
 ### bufio
+bufio包主要是包装了io.Reader以及io.Writer然后生成两个类型：Reader以及Writer，并且衍生出了一系列读写的函数，主要如下：
+
+```
+type Reader
+
+func NewReader(rd io.Reader) *Reader
+func NewReaderSize(rd io.Reader, size int) *Reader
+func (b *Reader) Read(p []byte) (n int, err error)
+func (b *Reader) ReadByte() (c byte, err error)
+func (b *Reader) ReadBytes(delim byte) (line []byte, err error)
+func (b *Reader) ReadLine() (line []byte, isPrefix bool, err error)
+func (b *Reader) ReadRune() (r rune, size int, err error)
+func (b *Reader) ReadSlice(delim byte) (line []byte, err error)
+func (b *Reader) ReadString(delim byte) (line string, err error)
 
 
+type Writer
+
+func NewWriter(wr io.Writer) *Writer
+func NewWriterSize(wr io.Writer, size int) *Writer
+func (b *Writer) Write(p []byte) (nn int, err error)
+func (b *Writer) WriteByte(c byte) error
+func (b *Writer) WriteRune(r rune) (size int, err error)
+func (b *Writer) WriteString(s string) (int, error)
+```
+具体内容见下面代码以及注释：
+
+```
+
+```
 
 #### 参考资料：
 [https://golang.org/pkg/](https://golang.org/pkg/)
