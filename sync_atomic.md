@@ -26,7 +26,7 @@ func AddUintptr(addr *uintptr, delta uintptr) (new uintptr)
 
 示例:
 
-```
+```go
 package main
 
 import (
@@ -92,7 +92,7 @@ func CompareAndSwapUintptr(addr *uintptr, old, new uintptr) (swapped bool)
 
 示例:
 
-```
+```go
 package main
 
 import (
@@ -153,7 +153,7 @@ func LoadUintptr(addr *uintptr) (val uintptr)
 
 示例：
 
-```
+```go
 package main
 
 import (
@@ -201,7 +201,7 @@ func StoreUintptr(addr *uintptr, val uintptr)
 
 示例：
 
-```
+```go
 package main
 
 import "fmt"
@@ -258,7 +258,7 @@ func SwapUintptr(addr *uintptr, new uintptr) (old uintptr)
 
 示例：
 
-```
+```go
 package main
 
 import (

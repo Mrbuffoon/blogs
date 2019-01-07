@@ -2,7 +2,7 @@
 lru部分的代码在lru/lru.go文件中，它主要是封装了一系列lru算法相关的接口，供groupcahe进行缓存置换相关的调用。
 它主要封装了下面几个接口：
 
-```
+```go
 // 创建一个Cache
 func New(maxEntries int) *Cache
  
@@ -27,7 +27,7 @@ func (c *Cache) Clear()
 ```
 下面我们具体讲一下lru部分的全部代码。
 
-```
+```go
 //Cache是LRU的一个缓存区域，注意它并不是线程安全的
 type Cache struct {
 	//MaxEntries是Cache中实体的最大数量，0表示没有限制。
@@ -53,7 +53,7 @@ type entry struct {
 ```
 New()函数传入Cache允许的最大实体数，返回一个初始化过的Cache指针。
 
-```
+```go
 // New creates a new Cache.
 // If maxEntries is zero, the cache has no limit and it's assumed
 // that eviction is done by the caller.
@@ -67,7 +67,7 @@ func New(maxEntries int) *Cache {
 ```
 Add()函数传入一个K/V对，在Cache中添加这个实体。
 
-```
+```go
 // Add adds a value to the cache.
 func (c *Cache) Add(key Key, value interface{}) {
 	//如果cache为空，则重新初始化一下
@@ -94,7 +94,7 @@ func (c *Cache) Add(key Key, value interface{}) {
 ```
 Get()函数传入一个key，返回一个是否有该key以及对应value。
 
-```
+```go
 // Get looks up a key's value from the cache.
 func (c *Cache) Get(key Key) (value interface{}, ok bool) {
 	if c.cache == nil {
@@ -110,7 +110,7 @@ func (c *Cache) Get(key Key) (value interface{}, ok bool) {
 ```
 Remove()函数传入一个key，将该key对应的kv对实体从cache中移除。
 
-```
+```go
 // Remove removes the provided key from the cache.
 func (c *Cache) Remove(key Key) {
 	if c.cache == nil {
@@ -135,7 +135,7 @@ func (c *Cache) removeElement(e *list.Element) {
 ```
 RemoveOldest()函数删除最久未被访问的内容。
 
-```
+```go
 // RemoveOldest removes the oldest item from the cache.
 func (c *Cache) RemoveOldest() {
 	if c.cache == nil {
@@ -150,7 +150,7 @@ func (c *Cache) RemoveOldest() {
 ```
 Len（）函数返回Cache中元素数。
 
-```
+```go
 // Len returns the number of items in the cache.
 func (c *Cache) Len() int {
 	if c.cache == nil {
@@ -162,7 +162,7 @@ func (c *Cache) Len() int {
 ```
 Clear()函数
 
-```
+```go
 // Clear purges all stored items from the cache.
 func (c *Cache) Clear() {
 	//如果回调函数不为空，需要遍历执行回调函数
@@ -179,7 +179,7 @@ func (c *Cache) Clear() {
 ```
 用法举例：
 
-```
+```go
 package main
 
 import (

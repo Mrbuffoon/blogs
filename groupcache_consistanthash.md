@@ -3,7 +3,7 @@ consistenthash.go文件中是consistenthash模块的代码，这主要是提供�
 
 该部分主要封装了以下这几个接口：
 
-```
+```go
 //创建一个HashMap
 func New(replicas int, fn Hash) *Map
 
@@ -21,7 +21,7 @@ func (m *Map) Get(key string) string
 
 首先定义了一个函数，用于将key值 Hash成32位整数，然后定义了Map结构体用于存放Hash后的结果，其中hash是上面的hash函数，Map结构中replicas的含义是增加虚拟桶，使数据分布更加均匀，keys存放hash后的结果，并且经过了排序，其实就是一致性hash圆环，hashMap就是存放具体的对应，将key对应上hash后的32位整数。
 
-```
+```go
 
 type Hash func(data []byte) uint32
 
@@ -34,7 +34,7 @@ type Map struct {
 ```
 New（）创建一个Map结构。这里注意如果hash函数为nil，则默认Hash函数为crc32库的ChecksumIEEE函数。
 
-```
+```go
 func New(replicas int, fn Hash) *Map {
 	m := &Map{
 		replicas: replicas,
@@ -49,7 +49,7 @@ func New(replicas int, fn Hash) *Map {
 ```
 IsEmpty()函数返回MAP是否为空。
 
-```
+```go
 // Returns true if there are no items available.
 func (m *Map) IsEmpty() bool {
 	return len(m.keys) == 0
@@ -57,7 +57,7 @@ func (m *Map) IsEmpty() bool {
 ```
 Add（）函数增加一些key到Map中。
 
-```
+```go
 // Adds some keys to the hash.
 func (m *Map) Add(keys ...string) {
 	//遍历要增加的key集合
@@ -77,7 +77,7 @@ func (m *Map) Add(keys ...string) {
 ```
 Get（）函数根据key找到对应的节点
 
-```
+```go
 // Gets the closest item in the hash to the provided key.
 func (m *Map) Get(key string) string {
 	if m.IsEmpty() {
@@ -101,7 +101,7 @@ func (m *Map) Get(key string) string {
 ```
 
 ####简单应用举例：
-```
+```go
 package main
 
 import (

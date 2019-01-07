@@ -42,7 +42,7 @@ func Errorf(format string, a ...interface{}) error
 
 函数实例：
 
-```
+```go
 //fmt格式化输入输出函数
 package main
 

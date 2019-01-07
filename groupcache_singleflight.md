@@ -8,7 +8,7 @@ func (g *Group) Do(key string, fn func() (interface{}, error)) (interface{}, err
 ```
 首先，先定义了下面两个结构体：
 
-```
+```go
 //实际请求函数的封装结构体
 // call is an in-flight or completed Do call
 type call struct {
@@ -34,7 +34,7 @@ type Group struct {
 
 这里利用了go的锁机制，比如Metux、WaitGroup等。
 
-```
+```go
 // Do executes and returns the results of the given function, making
 // sure that only one execution is in-flight for a given key at a
 // time. If a duplicate comes in, the duplicate caller waits for the
@@ -81,7 +81,7 @@ func (g *Group) Do(key string, fn func() (interface{}, error)) (interface{}, err
 }
 ```
 #### 使用实例
-```
+```go
 package main
 
 import (

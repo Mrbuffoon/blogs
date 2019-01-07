@@ -4,7 +4,7 @@ byteview.go文件封装了一个string与byte[]的统一接口，也就是说用
 
 首先封装了一个ByteView结构体：
 
-```
+```go
 // A ByteView holds an immutable view of bytes.
 // Internally it wraps either a []byte or a string,
 // but that detail is invisible to callers.
@@ -19,7 +19,7 @@ type ByteView struct {
 ```
 然后提供了一系列方法：
 
-```
+```go
 // 返回长度
 func (v ByteView) Len() int
 
@@ -62,7 +62,7 @@ func (v ByteView) WriteTo(w io.Writer) (n int64, err error)
 
 所有函数其实都非常简单，就不一一解释各个方法了：
 
-```
+```go
 // Len returns the view's length.
 //【返回一个view的长度】
 func (v ByteView) Len() int {
@@ -223,7 +223,7 @@ func (v ByteView) WriteTo(w io.Writer) (n int64, err error) {
 }
 ```
 #### 应用实例：
-```
+```go
 func TestByteView(t *testing.T) {
 	for _, s := range []string{"", "x", "yy"} {
 		for _, v := range []ByteView{of([]byte(s)), of(s)} {

@@ -10,7 +10,7 @@ Goroutine非常轻量，除了为之分配的栈空间，其所占用的内存�
 
 channel通常用来在多个线程之间传递消息或者进行同步，channel的基本语法这里不再赘述，直接上一个实例代码：
 
-```
+```go
 package main
 
 import (
@@ -138,7 +138,7 @@ Cond是条件等待，条件等待通过 Wait 让例程等待，通过 Signal �
 
 在 Wait 之前应当手动为 c.L 上锁，Wait 结束后手动解锁。为避免虚假唤醒，需要将 Wait 放到一个条件判断循环中。官方要求的写法如下：
 
-```
+```go
 c.L.Lock()
 for !condition() {
     c.Wait()
@@ -150,7 +150,7 @@ Cond 在开始使用之后，不能再被复制。
 
 示例代码如下：
 
-```
+```go
 package main
 
 import (
@@ -204,7 +204,7 @@ Mutex 可以安全的在多个例程中并行使用。
 
 示例代码如下：
 
-```
+```go
 package main
 
 import (
@@ -259,7 +259,7 @@ Once 可以安全的在多个例程中并行使用。
 
 示例代码：
 
-```
+```go
 package main
 
 import (
@@ -298,7 +298,7 @@ Mutex 可以安全的在多个例程中并行使用。
 
 示例代码：
 
-```
+```go
 package main
 
 import (
@@ -346,7 +346,7 @@ WaitGroup 用于等待一组例程的结束。主例程在创建每个子例程�
 
 示例代码：
 
-```
+```go
 package main
 
 import (

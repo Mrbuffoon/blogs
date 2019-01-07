@@ -10,7 +10,7 @@ Type就是定义的类型的一个数据类型，Value是值的类型。
 #### TypeOf(i interface{}) Type
 其中常用的的内置方法以及一些函数如下：
 
-```
+```go
 func ChanOf(dir ChanDir, t Type) Type    // 创建反射的信道。其实就是类似这样 reflect.TypeOf(chan int)
 func MapOf(key, elem Type) Type    // 创建反射的Map。其实就是类似这样 reflect.TypeOf(map[int]string)
 func SliceOf(t Type) Type    // 创建反射的Slice。其实就是类似这样 reflect.TypeOf([]int)
@@ -48,7 +48,7 @@ Len() int    // 返回 Array 的长度
 #### ValueOf(i interface{}) Value
 其中一些常用的函数如下：
 
-```
+```go
 func Append(s Value, x ...Value) Value    // 追加Slice
 func AppendSlice(s, t Value) Value    // 批量追加Slice
 func Indirect(v Value) Value    // 返回指针源内存地址
@@ -122,7 +122,7 @@ func (v Value) Close()    // 关闭信道
 reflect的一些典型的应用场景如下：
 ##### 1、动态调用函数
 
-```
+```go
 package main
 
 import (
@@ -166,7 +166,7 @@ func main() {
 ```
 ##### 2、struct tag 解析
 
-```
+```go
 package main
 
 import (
@@ -199,7 +199,7 @@ func main() {
 ```
 ##### 3、类型转换与赋值
 
-```
+```go
 package main
 
 import (
@@ -241,7 +241,7 @@ func main() {
 }
 ```
 #####  4、通过kind()处理不同分支
-```
+```go
 package main
 
 import (
@@ -264,7 +264,7 @@ func main() {
 }
 ```
 ##### 5、判断实例是否实现了某接口
-```
+```go
 package main
 
 import (

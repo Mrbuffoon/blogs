@@ -12,7 +12,7 @@ golang中增加了一个errgroup包，它在sync.WaitGroup功能的基础上，�
 
 下面先上一个实例，这个例子比较简单，只用到了Go以及Wait两个函数。
 
-```
+```go
 package main
 
 import (
@@ -56,7 +56,7 @@ func main() {
 
 再下面这个例子使用了WithContext函数,这主要是便于在各个goruntine之间传递数据。
 
-```
+```go
 package main
 
 import (
