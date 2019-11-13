@@ -4,11 +4,11 @@ golang中增加了一个errgroup包，它在sync.WaitGroup功能的基础上，�
 
 其中包含的函数如下：
 
->func WithContext(ctx context.Context) (*Group, context.Context)
+> func WithContext(ctx context.Context) (*Group, context.Context)
 
->func (g *Group) Go(f func() error)
+> func (g *Group) Go(f func() error)
 
->func (g *Group) Wait() error
+> func (g *Group) Wait() error
 
 下面先上一个实例，这个例子比较简单，只用到了Go以及Wait两个函数。
 

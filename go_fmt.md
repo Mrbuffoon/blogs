@@ -1,44 +1,43 @@
 ## Go fmt 包实例
 
 fmt包提供格式化输入输出，主要有下面几个函数：
->
-func Printf(format string, a ...interface{}) (n int, err error)
->
-func Print(a ...interface{}) (n int, err error)
->
-func Println(a ...interface{}) (n int, err error)
->
-func Sprintf(format string, a ...interface{}) string
->
-func Sprint(a ...interface{}) string
->
-func Sprintln(a ...interface{}) string
->
-func Fprintf(w io.Writer, format string, a ...interface{}) (n int, err error)
->
-func Fprint(w io.Writer, a ...interface{}) (n int, err error)
->
-func Fprintln(w io.Writer, a ...interface{}) (n int, err error)
->
-func Scanf(format string, a ...interface{}) (n int, err error)
->
-func Scan(a ...interface{}) (n int, err error)
->
-func Scanln(a ...interface{}) (n int, err error)
->
-func Sscanf(str string, format string, a ...interface{}) (n int, err error)
->
-func Sscan(str string, a ...interface{}) (n int, err error)
->
-func Sscanln(str string, a ...interface{}) (n int, err error)
->
-func Fscanf(r io.Reader, format string, a ...interface{}) (n int, err error)
->
-func Fscan(r io.Reader, a ...interface{}) (n int, err error)
->
-func Fscanln(r io.Reader, a ...interface{}) (n int, err error)
->
-func Errorf(format string, a ...interface{}) error
+> func Printf(format string, a ...interface{}) (n int, err error)
+
+> func Print(a ...interface{}) (n int, err error)
+
+> func Println(a ...interface{}) (n int, err error)
+
+> func Sprintf(format string, a ...interface{}) string
+
+> func Sprint(a ...interface{}) string
+
+> func Sprintln(a ...interface{}) string
+
+> func Fprintf(w io.Writer, format string, a ...interface{}) (n int, err error)
+
+> func Fprint(w io.Writer, a ...interface{}) (n int, err error)
+
+> func Fprintln(w io.Writer, a ...interface{}) (n int, err error)
+
+> func Scanf(format string, a ...interface{}) (n int, err error)
+
+> func Scan(a ...interface{}) (n int, err error)
+
+> func Scanln(a ...interface{}) (n int, err error)
+
+> func Sscanf(str string, format string, a ...interface{}) (n int, err error)
+
+> func Sscan(str string, a ...interface{}) (n int, err error)
+
+> func Sscanln(str string, a ...interface{}) (n int, err error)
+
+> func Fscanf(r io.Reader, format string, a ...interface{}) (n int, err error)
+
+> func Fscan(r io.Reader, a ...interface{}) (n int, err error)
+
+> func Fscanln(r io.Reader, a ...interface{}) (n int, err error)
+
+> func Errorf(format string, a ...interface{}) error
 
 函数实例：
 

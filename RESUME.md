@@ -16,7 +16,6 @@
 #### [groupcache_consistanthash](groupcache_consistanthash.md)
 #### [groupcache_lru](groupcache_lru.md)
 #### [groupcache_singleflight](groupcache_singleflight.md)
-#### [groupcache_summury](groupcache_summury.md)
 ### Other
 #### [SDN初步调研](SDN初步调研.md)
 #### [代码管理中常用git操作](代码管理中常用git操作.md)

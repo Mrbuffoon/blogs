@@ -126,8 +126,12 @@ ring包实现了ring环的一系列操作。
 
 提供了对unicode编码进行属性判断的一些函数（比如是否数字？是否字母？等等）。
 
-###参考资料：
+### 参考资料：
+
 [https://golang.org/pkg/](https://golang.org/pkg/)
+
 [https://github.com/astaxie/gopkg](https://github.com/astaxie/gopkg)
+
 [https://studygolang.com/articles/15297](https://studygolang.com/articles/15297)
+
 [https://studygolang.com/articles/15290](https://studygolang.com/articles/15290)

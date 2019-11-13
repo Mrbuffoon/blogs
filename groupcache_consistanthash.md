@@ -1,4 +1,4 @@
-##groupcache源码分析（三）-- consistenthash
+## groupcache源码分析（三）-- consistenthash
 consistenthash.go文件中是consistenthash模块的代码，这主要是提供了一致性hash的一些接口。一致性hash算法，通常是用在查找一个合适的下载节点时，使负载更平均，同时也使得某个节点故障不会导致大量的重新映射成本，要了解一致性hash原理请详见：<https://www.cnblogs.com/lpfuture/p/5796398.html>
 
 该部分主要封装了以下这几个接口：
