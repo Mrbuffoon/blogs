@@ -122,7 +122,6 @@ start slave;
 ```
 
 查询查看主从同步状态，会发现Slave_IO_Running和Slave_SQL_Running是Yes了，表明开启成功。
-
 ## 3、压测
 ### SSD硬盘+82599光模块
 1024threads，300s，如下,性能略微低于单节点mysql，大概下降8%左右。
