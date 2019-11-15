@@ -20,3 +20,6 @@
 #### [SDN初步调研](SDN初步调研.md)
 #### [代码管理中常用git操作](代码管理中常用git操作.md)
 #### [多线程场景pymysql线程池使用的一点思考](多线程场景pymysql线程池使用的一点思考.md)
+#### [mysql单节点调优](mysql单节点调优-centos.md)
+#### [mysql高并发集群部署方案](Mysql高并发集群部署方案.md)
+#### [mysql主从部署](mysql主从部署.md)
