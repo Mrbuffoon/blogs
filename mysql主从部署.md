@@ -31,6 +31,7 @@ slave_skip_errors=1062
 
 * 创建同步用户
 
+
 ```
 CREATE USER 'slave'@'%' IDENTIFIED BY 'a123456';
 
@@ -103,6 +104,7 @@ change master to master_host='172.17.0.1', master_user='slave', master_password=
 
 * 查看主从同步状态
 
+
 ```
 在Slave中执行命令：
 show slave status;
@@ -113,11 +115,14 @@ show slave status;
 
 * 开启主从同步
 
+
 ```
 在Slave中执行命令：
 start slave;
 ```
+
 查询查看主从同步状态，会发现Slave_IO_Running和Slave_SQL_Running是Yes了，表明开启成功。
+
 ## 3、压测
 ### SSD硬盘+82599光模块
 1024threads，300s，如下,性能略微低于单节点mysql，大概下降8%左右。
